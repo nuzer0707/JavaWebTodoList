@@ -38,7 +38,7 @@
                <legend class="text-primary mb-3">新增工作項目</legend>
                <div class="form-group">
                    <label for="text" class="form-label">項目:</label>
-                   <input type="text" id="text" name="text" class="form-control" required placeholder="請輸入工作項目" />
+                   <input type="text" id="text" name="text" class="form-control" required placeholder="請輸入工作項目" />	
                </div>
                <button type="submit" class="btn btn-primary w-100">新增</button>
            </fieldset>
@@ -58,9 +58,10 @@
                        </div>
                        <small class="text-muted">（雙擊可編輯，按 Enter 儲存）</small>
                    </div>
-                   <div>
+                   <div class="form-check form-switch">
                        <input type="checkbox" ${todo.completed ? "checked" : ""}
-                              onchange="location.href='/JavaWebTodoList/todolist/update?id=${todo.id}&checked=' + this.checked;" />
+                              onchange="location.href='/JavaWebTodoList/todolist/update?id=${todo.id}&checked=' + this.checked;"
+                              role="switch" id="switchCheckChecked" class="form-check-input" />
                        已完成
                        <a href="/JavaWebTodoList/todolist/delete?id=${todo.id}"
                           style="display: ${todo.completed ? 'none' : 'inline'}"
